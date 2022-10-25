@@ -5,32 +5,47 @@ import no.hvl.dat100.jplab11.oppgave1.*;
 
 public class Tekst extends Innlegg {
 
-	// TODO: objektvariable 
+	protected String tekst; 
 	
 	public Tekst () {
 		
 	}
 	
 	public Tekst(int id, String bruker, String dato, String tekst) {
-		throw new UnsupportedOperationException(TODO.constructor("Tekst"));
+		this.id=id;
+		this.bruker=bruker;
+		this.dato=dato;
+		this.likes=0;
+		this.tekst=tekst;
+//		throw new UnsupportedOperationException(TODO.constructor("Tekst"));
 	}
 	
 	public Tekst(int id, String bruker, String dato, int likes, String tekst) {
-		throw new UnsupportedOperationException(TODO.constructor("Tekst"));
+		this.id=id;
+		this.bruker=bruker;
+		this.dato=dato;
+		this.likes=likes;
+		this.tekst=tekst;
+//		throw new UnsupportedOperationException(TODO.constructor("Tekst"));
 	}
 	
 	public String getTekst() {
-		throw new UnsupportedOperationException(TODO.method());
+		return this.tekst;
+//		throw new UnsupportedOperationException(TODO.method());
 
 	}
 
 	public void setTekst(String tekst) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.tekst=tekst;
+//		throw new UnsupportedOperationException(TODO.method());
 	}
 
 	@Override
 	public String toString() {
-		throw new UnsupportedOperationException(TODO.method());
+		// Denne funker, men jeg ønsker egentlig å bruke metoden fra Innlegg.
+		String str = "TEKST" + "\n" + this.id + "\n" + this.bruker + "\n" + this.dato + "\n" + this.likes + "\n" +  tekst + "\n" ;
+	return str;
+//		throw new UnsupportedOperationException(TODO.method());
 
 	}
 	

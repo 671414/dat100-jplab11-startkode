@@ -4,7 +4,10 @@ import no.hvl.dat100.jplab11.common.TODO;
 
 public abstract class Innlegg {
 	
-	// TODO - deklarering av objektvariable
+		protected int id;
+		protected String bruker;
+		protected String dato;
+		protected int likes;
 	
 	public Innlegg() {
 		
@@ -12,59 +15,84 @@ public abstract class Innlegg {
 	
 	public Innlegg(int id, String bruker, String dato) {
 
-		// TODO 
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+		this.id=id;
+		this.bruker=bruker;
+		this.dato=dato;
+		this.likes=0;
+//		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
 	}
 
 	public Innlegg(int id, String bruker, String dato, int likes) {
 
-		// TODO - START
+		this.id=id;
+		this.bruker=bruker;
+		this.dato=dato;
+		this.likes=likes;
 		
-		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
+//		throw new UnsupportedOperationException(TODO.constructor("Innlegg"));
 	}
 	
 	public String getBruker() {
-		
-		throw new UnsupportedOperationException(TODO.method());
+		return this.bruker;
+//		throw new UnsupportedOperationException(TODO.method());
 
 	}
 
 	public void setBruker(String bruker) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.bruker=bruker;
+		
+//		throw new UnsupportedOperationException(TODO.method());
 	}
 
 	public String getDato() {
-		throw new UnsupportedOperationException(TODO.method());
+		return this.dato;
+//		throw new UnsupportedOperationException(TODO.method());
 		
 	}
 
 	public void setDato(String dato) {
-		throw new UnsupportedOperationException(TODO.method());
+		this.dato=dato;
+//		throw new UnsupportedOperationException(TODO.method());
 	}
 
 	public int getId() {
-		throw new UnsupportedOperationException(TODO.method());
+		return this.id;
+//		throw new UnsupportedOperationException(TODO.method());
 
 	}
 
 	public int getLikes() {
-		throw new UnsupportedOperationException(TODO.method());
+		return this.likes;
+//		throw new UnsupportedOperationException(TODO.method());
 
 	}
 	
 	public void doLike () {
-		throw new UnsupportedOperationException(TODO.method());
+		this.likes+=1;
+//		throw new UnsupportedOperationException(TODO.method());
 	}
 	
 	public boolean erLik(Innlegg innlegg) {
-		throw new UnsupportedOperationException(TODO.method());
+		boolean lik=false; // utgangspunktet er at id ikke samsvarer med innlegg id
+		
+		if (getId() == innlegg.getId()) {
+			lik = true;
+		}
+		return lik;
+		
+		
+//		throw new UnsupportedOperationException(TODO.method());
 
 	}
 	
 	@Override
 	public String toString() {
+		String str;
 		
-		throw new UnsupportedOperationException(TODO.method());
+		str= this.id + "\n" + this.bruker + "\n" + this.dato + "\n" + this.likes + "\n";
+		
+		return str;
+//		throw new UnsupportedOperationException(TODO.method());
 				
 	}
 	
