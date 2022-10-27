@@ -1,5 +1,7 @@
 package no.hvl.dat100.jplab11.oppgave3;
 
+import java.util.Arrays;
+
 import no.hvl.dat100.jplab11.common.TODO;
 import no.hvl.dat100.jplab11.oppgave1.*;
 
@@ -23,25 +25,27 @@ public class Blogg {
 
 //		throw new UnsupportedOperationException(TODO.constructor("Blogg"));
 	}
-
+	
 	public int getAntall() {
-//		TODO returnerer antall lagrede innlegg i tabellen, alt som ikke har verdi 0
-		int i = 0;
-		while (nesteLedige !=0) {
-			i++;
+		int antall=0;
+		for (int i = 0; i < innleggtabell.length; i++) {
+			if (innleggtabell[i] != null) 
+				antall++;
+				
 			}
-			System.out.print(i);
-			return i;
+		return antall;
 		}
 		
-//		throw new UnsupportedOperationException(TODO.method());
+	
+//ortedOperationException(TODO.method());
 	
 
-	// kommer tilbake til den
+	// denne funker ikke
 	public Innlegg[] getSamling() {
-		Innlegg[] tabell = innleggtabell;
+	Innlegg [] tabell = new Innlegg [0];
+	tabell = innleggtabell;
 
-		return tabell;
+	return tabell;
 
 //		throw new UnsupportedOperationException(TODO.method());
 
@@ -103,15 +107,16 @@ public class Blogg {
 		
 		String str="";
 		String hjelp="";
-		
-		for(int i = 0; i< innleggtabell.length;i++) {
+		int i = 0;
+		while(i< innleggtabell.length && innleggtabell[i] != null) { // gjør at den er innenfor lengden og at den ikke er lenger en logisk tabell.
 		 hjelp	 = innleggtabell[i].toString();
 		 str += hjelp;
-		
+		 i++;
 		}
 		str= getAntall()+ "\n" + str;
+		System.out.print(str);
 		return str;
-		// get antall blir printet ut mellom hver innlegg
+		
 		
 //		throw new UnsupportedOperationException(TODO.method());
 	}
