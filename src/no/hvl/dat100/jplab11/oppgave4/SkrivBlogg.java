@@ -19,10 +19,10 @@ public class SkrivBlogg {
 		PrintWriter skriver =null;
 		
 		try {
-			skriver = new PrintWriter(mappe+filnavn); // tenk at det er så enkelt som å sette et jævla plusstegn foran..
+			skriver = new PrintWriter(mappe+filnavn); 
 			
 			 
-			String innlegg = samling.toString(); // gjør om teksten til riktig format funker når toString ikke funker...
+			String innlegg = samling.toString(); // 
 			skriver.println(innlegg); //skriver teksten inn i filen
 				
 		

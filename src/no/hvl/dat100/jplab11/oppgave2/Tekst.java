@@ -42,7 +42,7 @@ public class Tekst extends Innlegg {
 
 	@Override
 	public String toString() {
-		// Denne funker, men jeg ønsker egentlig å bruke metoden fra Innlegg.
+		
 		String str = "TEKST" + "\n" + this.id + "\n" + this.bruker + "\n" + this.dato + "\n" + this.likes + "\n" +  tekst + "\n" ;
 	return str;
 //		throw new UnsupportedOperationException(TODO.method());

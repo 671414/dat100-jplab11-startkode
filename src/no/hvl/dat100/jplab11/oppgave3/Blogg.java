@@ -40,7 +40,7 @@ public class Blogg {
 //ortedOperationException(TODO.method());
 	
 
-	// denne funker ikke
+	
 	public Innlegg[] getSamling() {
 	Innlegg [] tabell = new Innlegg [0];
 	tabell = innleggtabell;
@@ -90,11 +90,11 @@ public class Blogg {
 
 //		throw new UnsupportedOperationException(TODO.method());
 
-// vet ikke hvorfor det ikke funker, legger bare ikke inn innlegget...
+
 	public boolean leggTil(Innlegg innlegg) {
 		// TODO - START
 		
-		boolean finnes = finnInnlegg(innlegg) == -1; // sjekker at ID ikke finnes fra før. Har også en versjon som bruker finnes
+		boolean finnes = finnInnlegg(innlegg) == -1; // sjekker at ID ikke finnes fra før. 
 		if (finnes && nesteLedige < innleggtabell.length) { // sjekker at det er ledig plass
 			innleggtabell[nesteLedige] = innlegg; // setter inn innlegget på neste ledige plass...
 			nesteLedige++;
@@ -114,7 +114,7 @@ public class Blogg {
 		 i++;
 		}
 		str= getAntall()+ "\n" + str;
-		System.out.print(str);
+		
 		return str;
 		
 		
@@ -134,8 +134,17 @@ public class Blogg {
 	}
 
 	public boolean slett(Innlegg innlegg) {
+		int pos = finnInnlegg(innlegg);
+		if (pos >= 0) {
+			innleggtabell[pos] = innleggtabell[nesteLedige - 1];
+			innleggtabell[nesteLedige -1] = null;
+			nesteLedige--;
+			return true;
+		} else { 
+			return false;
+		}
 
-		throw new UnsupportedOperationException(TODO.method());
+//		throw new UnsupportedOperationException(TODO.method());
 	}
 
 	public int[] search(String keyword) {
